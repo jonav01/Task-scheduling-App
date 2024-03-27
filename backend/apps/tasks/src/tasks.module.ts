@@ -9,6 +9,7 @@ import { validateEnv } from './validation';
 import { TasksService } from './tasks/tasks.service';
 import { LibsModule } from 'libs/common/src/libs.module';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { TasksResolver } from './tasks/tasks.resolver';
 
 @Module({
   imports: [
@@ -49,6 +50,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     LibsModule,
   ],
   controllers: [],
-  providers: [TasksService],
+  providers: [TasksService, TasksResolver],
 })
 export class TasksModule {}

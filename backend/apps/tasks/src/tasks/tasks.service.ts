@@ -25,6 +25,7 @@ export class TasksService {
       this.logger.log('Tasks created event successfull');
       return createdTask;
     } catch (error) {
+      console.log(error);
       this.logger.error('Error occured while creating tasks');
       throw new InternalServerErrorException(
         'Some error occured while creating task',

@@ -1,3 +1,25 @@
-type Query {
-    ping: String
+type Tasks {
+  id: String
+  v: Int
+  description: String
+  name: String
+  parameters: String
+  schedule: String
+  status: String
+  type: String
+}
+
+input CreateTasksInput {
+  id: String
+  v: Int!
+  description: String!
+  name: String!
+  parameters: String!
+  schedule: String!
+  status: String!
+  type: String!
+}
+
+type Mutation {
+    createTasks(createTasksInput:CreateTasksInput!): Tasks!
 }

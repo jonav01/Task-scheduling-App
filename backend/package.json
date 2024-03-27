@@ -13,6 +13,7 @@
     "introspect": "dotenv -e .env.development.local prisma db pull",
     "start:tasks-dev": "dotenv -e .env.development.local nest start tasks --watch",
     "start:auth-dev": "dotenv -e .env.development.local nest start auth --watch",
+    "start:scheduler-dev": "dotenv -e .env.development.local nest start scheduler --watch",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod-tasks": "node dist/apps/tasks/main",
