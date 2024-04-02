@@ -17,6 +17,6 @@ export class TasksResolver {
   async createTasks(
     @Args('createTasksInput') createTasksInput: ITasksCreateObject,
   ) {
-    await this.taskService.createTasks(createTasksInput);
+    return await this.taskService.createTasks(createTasksInput);
   }
 }

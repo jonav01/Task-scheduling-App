@@ -18,3 +18,16 @@ model tasks {
   status      String
   type        String
 }
+
+enum TaskStatus {
+    Paused
+    Active
+  }
+
+model scheduler {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  taskId  String @unique
+  taskName String
+  time    String
+  status  TaskStatus
+}

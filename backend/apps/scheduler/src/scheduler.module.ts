@@ -4,6 +4,8 @@ import * as Joi from 'joi';
 import { validateEnv } from '../validation';
 import { SchedulerController } from './scheduler/scheduler.controller';
 import { SchedulerService } from './scheduler/scheduler.service';
+import { ScheduleModule } from '@nestjs/schedule';
+import { LibsModule } from 'libs/common/src';
 
 @Module({
   imports: [
@@ -12,6 +14,8 @@ import { SchedulerService } from './scheduler/scheduler.service';
       envFilePath: ['.env.development.local', '.env.production'],
       validationSchema: Joi.object(validateEnv),
     }),
+    LibsModule,
+    ScheduleModule.forRoot(),
   ],
   controllers: [SchedulerController],
   providers: [SchedulerService],
