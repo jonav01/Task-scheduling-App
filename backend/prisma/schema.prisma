@@ -22,6 +22,7 @@ model tasks {
 enum TaskStatus {
     Paused
     Active
+    Finished
   }
 
 model scheduler {
